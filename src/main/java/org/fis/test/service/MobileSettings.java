@@ -7,6 +7,7 @@ public class MobileSettings {
 
     private String deviceDescriptorFileName;
     private DesiredCapabilities capabilities;
+    final String DEVICE_DESCRIPTOR_DIR_PATH = "src/test/resources/device-descriptors";
 
     public MobileSettings(String deviceDescriptorFileName) {
         this.deviceDescriptorFileName = deviceDescriptorFileName;
@@ -17,7 +18,9 @@ public class MobileSettings {
     }
 
     public void setCapabilities() {
-        this.capabilities = CapabilitiesSettings.set(this.deviceDescriptorFileName);
+        this.capabilities = Capabilities.set(
+                this.DEVICE_DESCRIPTOR_DIR_PATH,
+                this.deviceDescriptorFileName);
     }
 
     public void startSimulator() {

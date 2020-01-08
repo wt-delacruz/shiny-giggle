@@ -14,14 +14,13 @@ public class DriverSettings {
         AppiumDriver<MobileElement> driver;
         String platformName = capabilities.getPlatform().name();
         switch (platformName) {
-            case "Android":
-                driver = new AndroidDriver<>(serverURL, capabilities);
-                break;
             case "iOS":
                 driver = new IOSDriver<>(serverURL, capabilities);
                 break;
+            case "Android":
             default:
                 driver = new AppiumDriver<>(serverURL, capabilities);
+                break;
         }
         return driver;
     }

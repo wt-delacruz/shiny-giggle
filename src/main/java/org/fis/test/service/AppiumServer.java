@@ -11,10 +11,10 @@ import java.util.HashMap;
 
 public class AppiumServer {
 
-    private final String NODE_PATH_VAR_NAME = "NODE_PATH";
-    private final String APPIUM_SERVER_PATH_VAR_NAME = "APPIUM_PATH";
-    private final String CONFIG_DIR_PATH = "src/main/resources";
-    private final String CONFIG_FILE_NAME = "appium_server";
+    final String NODE_PATH_VAR_NAME = "NODE_PATH";
+    final String APPIUM_SERVER_PATH_VAR_NAME = "APPIUM_PATH";
+    final String CONFIG_DIR_PATH = "src/main/resources";
+    final String CONFIG_FILE_NAME = "appium_server";
     private AppiumDriverLocalService server;
     private HashMap<String, String> appiumServerParameters;
 
