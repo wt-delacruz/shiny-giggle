@@ -6,10 +6,8 @@ import org.testng.annotations.*;
 import org.fis.test.service.AppiumServer;
 import org.fis.test.service.DriverSettings;
 import org.fis.test.service.MobileSettings;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 
-import java.net.URL;
 
 public class BaseTest {
     public AppiumDriver<MobileElement> driver;
