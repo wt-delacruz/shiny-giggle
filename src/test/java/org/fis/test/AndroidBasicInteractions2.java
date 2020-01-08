@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.fis.test.util.appium.AppiumServer;
+import org.fis.test.service.AppiumServer;
 
 import java.io.File;
 

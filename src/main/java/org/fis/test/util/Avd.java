@@ -12,22 +12,22 @@ public class Avd {
     public static void start(String nameOfAVD) {
         String[] aCommand = new String[]{EMULATOR_PATH, "-avd", nameOfAVD};
         try {
-            System.out.println("...Starting emulator");
+            System.out.println("...Starting Android AVD");
             Process process = new ProcessBuilder(aCommand).start();
             process.waitFor(1, TimeUnit.SECONDS);
-            System.out.println("...Emulator started");
+            System.out.println("...Android AVD started");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static void stop() {
-        System.out.println("...Stopping emulator");
+        System.out.println("...Stopping Android emulator");
         String[] aCommand = new String[]{ADV_PATH, "emu", "kill"};
         try {
             Process process = new ProcessBuilder(aCommand).start();
             process.waitFor(1, TimeUnit.SECONDS);
-            System.out.println("...Emulator stopped");
+            System.out.println("...Android AVD stopped");
         } catch (Exception e) {
             e.printStackTrace();
         }

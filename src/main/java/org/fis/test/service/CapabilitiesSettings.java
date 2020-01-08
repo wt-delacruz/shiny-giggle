@@ -1,19 +1,17 @@
-package org.fis.test.util.appium;
+package org.fis.test.service;
 
 import org.fis.test.util.config.ConfigLoader;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;
 
-public class CapabilitiesConfigurator {
+public class CapabilitiesSettings {
 
     private static final String DEVICE_DESCRIPTOR_DIR_PATH = "src/test/resources/device-descriptors";
 
     public static DesiredCapabilities set(String deviceDescriptorFileName) {
         HashMap<String, String> capabilitiesMap = ConfigLoader.load(DEVICE_DESCRIPTOR_DIR_PATH,
                 deviceDescriptorFileName);
-        DesiredCapabilities caps = new DesiredCapabilities();
-        capabilitiesMap.forEach(caps::setCapability);
-        return caps;
+        return new DesiredCapabilities(capabilitiesMap);
     }
 }

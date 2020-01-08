@@ -3,37 +3,40 @@ package org.fis.test;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.testng.annotations.*;
-import org.fis.test.util.appium.AppiumServer;
-import org.fis.test.util.appium.DriverConfigurator;
-import org.fis.test.util.appium.MobileDeviceConfigurator;
+import org.fis.test.service.AppiumServer;
+import org.fis.test.service.DriverSettings;
+import org.fis.test.service.MobileSettings;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
+
+import java.net.URL;
 
 public class BaseTest {
     public AppiumDriver<MobileElement> driver;
 
     @BeforeSuite
     public void _startAppiumServer(ITestContext context) {
-        AppiumServer server = new AppiumServer().start();
+        AppiumServer server = new AppiumServer();
+        server.start();
         context.setAttribute("appiumServer", server);
     }
 
     @BeforeTest
     @Parameters({"deviceDescriptorFileName"})
-    public void _setMobileDeviceConfiguration(ITestContext context, String deviceDescriptorFileName) {
-        DesiredCapabilities capabilities = MobileDeviceConfigurator.set_capabilities(deviceDescriptorFileName);
-        MobileDeviceConfigurator.start_simulators(
-                capabilities.getCapability("deviceName").toString(),
-                capabilities.getCapability("platformName").toString());
-        context.setAttribute("capabilities", capabilities);
+    public void _setMobileDeviceSettings(ITestContext context, String deviceDescriptorFileName) {
+        MobileSettings mobileSettings = new MobileSettings(deviceDescriptorFileName);
+        mobileSettings.setCapabilities();
+        mobileSettings.startSimulator();
+        context.setAttribute("mobileSettings", mobileSettings);
     }
 
     @BeforeClass
     public void _setUpDriver(ITestContext context) {
-        DesiredCapabilities mobileCapabilities = ((DesiredCapabilities) (context.getAttribute("capabilities")));
-        this.driver = DriverConfigurator.set(
-                ((AppiumServer) (context.getAttribute("appiumServer"))).getUrl(),
-                mobileCapabilities);
+        MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute("mobileSettings")));
+        AppiumServer appiumServer = ((AppiumServer) (context.getAttribute("appiumServer")));
+        this.driver = DriverSettings.set(
+                appiumServer.getUrl(),
+                mobileSettings.getCapabilities());
     }
 
     @AfterSuite
@@ -43,9 +46,8 @@ public class BaseTest {
 
     @AfterTest
     public void _stopADV(ITestContext context) {
-        DesiredCapabilities capabilities = (DesiredCapabilities) (context.getAttribute("capabilities"));
-        String platformName = capabilities.getCapability("platformName").toString();
-        MobileDeviceConfigurator.stop_simulators(platformName);
+        MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute("mobileSettings")));
+        mobileSettings.stopSimulator();
     }
 
     @AfterClass

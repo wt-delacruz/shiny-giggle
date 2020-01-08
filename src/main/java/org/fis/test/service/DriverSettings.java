@@ -1,4 +1,4 @@
-package org.fis.test.util.appium;
+package org.fis.test.service;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
-public class DriverConfigurator {
+public class DriverSettings {
 
     public static AppiumDriver<MobileElement> set(URL serverURL, DesiredCapabilities capabilities) {
         AppiumDriver<MobileElement> driver;

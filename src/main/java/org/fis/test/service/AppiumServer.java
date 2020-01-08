@@ -1,4 +1,4 @@
-package org.fis.test.util.appium;
+package org.fis.test.service;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
