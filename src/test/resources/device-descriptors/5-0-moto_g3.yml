@@ -1,0 +1,19 @@
+deviceCapabilities:
+  deviceName: "Moto g3",
+  udid: "ZY223VD4Z3",
+  platformName: "Android",
+  platformVersion: "7",
+  appWaitDuration: 3000,
+  newCommandTimeout: 6000,
+  systemPort: 8201,
+  appPackage: "com.mfoundry.enterprise.mbanking.push",
+  appActivity: "com.fismobile.cpas.dev.ui.DevStartupActivity",
+  autoLaunch: true,
+  automationName: "uiautomator2",
+  app: "/Users/darena/Downloads/build2.apk"
+environment:
+  fiCode: "darena",
+  environmentUrl: "https://bal.fismobile.com/5-0-x-ci/",
+  dcsUrl: "https://darwin-dsc-23.ec2.fismobile.net/rest/api/5-0-x-dcs-ci/",
+  dcsUser: "admin",
+  dcsPass: "mbanking"
