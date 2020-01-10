@@ -1,4 +1,4 @@
-package org.fis.test.util.config;
+package org.fis.test.util;
 
 import java.io.File;
 import java.io.IOException;

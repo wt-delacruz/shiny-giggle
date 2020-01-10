@@ -1,4 +1,4 @@
-package org.fis.test.util.config;
+package org.fis.test.util;
 
 import org.yaml.snakeyaml.Yaml;
 
@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 
-public class ConfigLoader {
+public class ConfigReader {
 
     /**
      * Looks for a YAML file inside the "src/main/config" directory with the name specified in the

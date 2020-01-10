@@ -1,0 +1,10 @@
+# Appium config
+NODE_PATH: "/Users/wdelacruz/.nvm/versions/node/v12.14.0/bin/node"
+APPIUM_SERVER_PATH: "/Users/wdelacruz/.nvm/versions/node/v12.14.0/bin/appium"
+
+# Android emulators config
+AVD_PATH: "/Users/wdelacruz/Library/Android/sdk/platform-tools/adb"
+ANDROID_EMULATOR_PATH: "/Users/wdelacruz/Library/Android/sdk/emulator/emulator"
+
+# iOS emulators config
+# todo

@@ -1,16 +1,17 @@
 package org.fis.test.service;
 
-import org.fis.test.util.Avd;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class MobileSettings {
 
+    final String DEVICE_DESCRIPTOR_DIR_PATH = "src/test/resources/device-descriptors";
     private String deviceDescriptorFileName;
     private DesiredCapabilities capabilities;
-    final String DEVICE_DESCRIPTOR_DIR_PATH = "src/test/resources/device-descriptors";
+    private Avd avd;
 
     public MobileSettings(String deviceDescriptorFileName) {
         this.deviceDescriptorFileName = deviceDescriptorFileName;
+        this.avd = new Avd();
     }
 
     public DesiredCapabilities getCapabilities() {
@@ -26,13 +27,13 @@ public class MobileSettings {
     public void startSimulator() {
         String deviceName = this.capabilities.getCapability("deviceName").toString();
         String platformName = this.capabilities.getCapability("platformName").toString();
-        switch (deviceName) {
+        switch (platformName) {
             case "iOS":
                 //todo
                 break;
             case "Android":
             default:
-                Avd.start(platformName);
+                this.avd.start(deviceName);
                 break;
         }
     }
@@ -45,7 +46,7 @@ public class MobileSettings {
                 break;
             case "Android":
             default:
-                Avd.stop();
+                this.avd.stop();
                 break;
         }
     }

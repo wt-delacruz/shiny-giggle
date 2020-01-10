@@ -8,7 +8,6 @@ import org.fis.test.service.DriverSettings;
 import org.fis.test.service.MobileSettings;
 import org.testng.ITestContext;
 
-
 public class BaseTest {
     public AppiumDriver<MobileElement> driver;
 
