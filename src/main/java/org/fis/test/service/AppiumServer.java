@@ -28,13 +28,6 @@ public class AppiumServer {
         serviceBuilder.withAppiumJS(new File(this.appiumServerPath));
     }
 
-    /**
-     * Starts the Appium Server using the "AppiumServiceBuilder" class.
-     * <p>
-     * This method will, first, try to use the parameters (node_path and appium_server_path)
-     * defined in "configuration.yml". If these variables are not set, it will try to use
-     * the environment variables NODE_PATH and APPIUM_PATH.
-     */
     public void start() {
         AppiumServiceBuilder serviceBuilder = new AppiumServiceBuilder();
         serviceBuilder.usingAnyFreePort();
@@ -45,9 +38,6 @@ public class AppiumServer {
         System.out.println(String.format("Appium Server is running on %s.", this.getUrl().toString()));
     }
 
-    /**
-     * Stops the Appium Server.
-     */
     public void stop() {
         this.server.stop();
         System.out.println(String.format("Appium Server running on %s has been stopped.", this.getUrl().toString()));
