@@ -3,7 +3,7 @@ package org.fis.sandbox;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 
-public class BaseTest {
+public class BaseTest1 {
 
     @BeforeSuite
     public void _beforeSuiteMethod(ITestContext context) {

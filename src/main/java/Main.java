@@ -1,8 +1,19 @@
-import org.fis.test.service.AppiumServer;
-import org.fis.test.service.MobileSettings;
+import org.fis.framework.service.AppiumServer;
+import org.fis.framework.service.MobileSettings;
 
 public class Main {
-    private static void testAVD() throws Exception{
+
+    enum Level {
+        LOW,
+        MEDIUM,
+        HIGH;
+
+        private String get(){
+            return this.toString();
+        }
+    }
+
+    private static void testAndroidSimulator() throws Exception {
         MobileSettings mobileSettings = new MobileSettings("29-0-pixel_3xl");
         mobileSettings.setCapabilities();
         System.out.println(mobileSettings.getCapabilities().toJson().toString());
@@ -11,7 +22,7 @@ public class Main {
         mobileSettings.stopSimulator();
     }
 
-    private static void testAppiumServer() throws Exception{
+    private static void testAppiumServer() throws Exception {
         AppiumServer server = new AppiumServer();
         server.start();
         Thread.sleep(5000);
@@ -19,7 +30,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        //testAVD();
-        testAppiumServer();
+        //System.out.println(Level.MEDIUM.get());
     }
 }

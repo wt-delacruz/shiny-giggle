@@ -1,31 +1,31 @@
-package org.fis.test.service;
+package org.fis.framework.service;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.fis.test.util.Utilities;
+import org.fis.framework.util.Utilities;
 
 import java.io.File;
 import java.net.URL;
 
 public class AppiumServer {
 
-    final String NODE_PATH_ENVVAR_NAME = "NODE_PATH";
-    final String APPIUM_SERVER_PATH_ENVVAR_NAME = "APPIUM_SERVER_PATH";
-    private String nodePath;
-    private String appiumServerPath;
     private AppiumDriverLocalService server;
 
-    public AppiumServer() {
-        this.nodePath = Utilities.getEnvVarValue(NODE_PATH_ENVVAR_NAME);
-        this.appiumServerPath = Utilities.getEnvVarValue(APPIUM_SERVER_PATH_ENVVAR_NAME);
+    enum EnvVars {
+        NODE_PATH,
+        APPIUM_SERVER_PATH;
+
+        private String getValue() {
+            return Utilities.getEnvVarValue(this.toString());
+        }
     }
 
     private void setNodeJS(AppiumServiceBuilder serviceBuilder) {
-        serviceBuilder.usingDriverExecutable(new File(this.nodePath));
+        serviceBuilder.usingDriverExecutable(new File(EnvVars.NODE_PATH.getValue()));
     }
 
     private void setAppiumNPMPackage(AppiumServiceBuilder serviceBuilder) {
-        serviceBuilder.withAppiumJS(new File(this.appiumServerPath));
+        serviceBuilder.withAppiumJS(new File(EnvVars.APPIUM_SERVER_PATH.getValue()));
     }
 
     public void start() {

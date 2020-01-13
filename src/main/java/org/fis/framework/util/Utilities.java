@@ -1,4 +1,4 @@
-package org.fis.test.util;
+package org.fis.framework.util;
 
 public class Utilities {
 

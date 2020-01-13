@@ -1,30 +1,43 @@
-package org.fis.test;
+package org.fis.framework;
 
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.fis.test.service.AppiumServer;
 
 import java.io.File;
 
-public class AndroidBasicInteractions2 extends BaseTest {
+public class AndroidBasicInteractions{
 
-    private AndroidDriver driver;
-    private static AppiumServer server;
+    private static AppiumDriverLocalService server;
     private final String SEARCH_ACTIVITY = ".app.SearchInvoke";
     private final String ALERT_DIALOG_ACTIVITY = ".app.AlertDialogSamples";
-    private final String PACKAGE = "io.org.fis.test.util.appium.android.apis";
+    private final String PACKAGE = "io.appium.android.apis";
+    private AndroidDriver driver;
 
     @BeforeTest
     public static void startAppiumServer() {
-        server = new AppiumServer();
+        AppiumServiceBuilder serviceBuilder = new AppiumServiceBuilder();
+        // Use any port, in case the default 4723 is already taken (maybe by another Appium server)
+        serviceBuilder.usingAnyFreePort();
+        // Tell serviceBuilder where node is installed. Or set this path in an environment variable named NODE_PATH
+        serviceBuilder.usingDriverExecutable(new File("/Users/wdelacruz/.nvm/versions/node/v12.14.0/bin/node"));
+        // Tell serviceBuilder where Appium is installed. Or set this path in an environment variable named APPIUM_PATH
+        serviceBuilder.withAppiumJS(new File("/Users/wdelacruz/.nvm/versions/node/v12.14.0/bin/appium"));
+        //The XCUITest driver requires that a path to the Carthage binary is in the PATH variable. I have this set for my shell, but the Java process does not see it. It can be inserted here.
+//        HashMap<Str<≤≤≤≤≤≤≤ing, String> environment = new HashMap();
+//        environment.put("PATH", "/usr/local/bin:" + System.getenv("PATH"));
+//        serviceBuilder.withEnvironment(environment);
+
+        server = AppiumDriverLocalService.buildService(serviceBuilder);
         server.start();
     }
 

@@ -1,4 +1,4 @@
-package org.fis.test.service;
+package org.fis.framework.service;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -19,7 +19,7 @@ public class DriverSettings {
                 break;
             case "Android":
             default:
-                driver = new AppiumDriver<>(serverURL, capabilities);
+                driver = new AndroidDriver<>(serverURL, capabilities);
                 break;
         }
         return driver;

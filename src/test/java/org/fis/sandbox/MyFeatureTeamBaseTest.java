@@ -2,7 +2,7 @@ package org.fis.sandbox;
 
 import org.testng.annotations.*;
 
-public class MyFeatureTeamBaseTest extends BaseTest {
+public class MyFeatureTeamBaseTest extends BaseTest1 {
     @BeforeSuite
     public void __beforeSuiteMethod() {
         String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();

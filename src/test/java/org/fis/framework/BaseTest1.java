@@ -1,4 +1,4 @@
-package org.fis.test;
+package org.fis.framework;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
 
-public abstract class BaseTest {
+public abstract class BaseTest1 {
 
     private AppiumDriver driver;
     private static AppiumDriverLocalService server;

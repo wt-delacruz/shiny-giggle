@@ -1,26 +1,27 @@
-package org.fis.test.service;
+package org.fis.framework.service;
 
-import org.fis.test.util.Utilities;
+import org.fis.framework.util.Utilities;
+
 import java.util.concurrent.TimeUnit;
 
-public class Avd {
-    final String ADV_PATH = "AVD_PATH";
-    final String EMULATOR_PATH = "EMULATOR_PATH";
+public class AndroidEmulator {
+    final String ADB_PATH = "ADB_PATH";
+    final String ANDROID_TOOLS = "ANDROID_TOOLS";
     private String avdPath;
     private String emulatorPath;
 
-    public Avd() {
-        this.avdPath = Utilities.getEnvVarValue(ADV_PATH);
-        this.emulatorPath = Utilities.getEnvVarValue(EMULATOR_PATH);
+    public AndroidEmulator() {
+        this.avdPath = Utilities.getEnvVarValue(ADB_PATH);
+        this.emulatorPath = Utilities.getEnvVarValue(ANDROID_TOOLS) + "/emulator";
     }
 
     public void start(String nameOfAVD) {
         String[] aCommand = new String[]{this.emulatorPath, "-avd", nameOfAVD};
         try {
-            System.out.println("...Starting Android AVD");
+            System.out.println("...Starting Android emulator");
             Process process = new ProcessBuilder(aCommand).start();
             process.waitFor(1, TimeUnit.SECONDS);
-            System.out.println("...Android AVD started");
+            System.out.println("...Android emulator started");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,7 +33,7 @@ public class Avd {
         try {
             Process process = new ProcessBuilder(aCommand).start();
             process.waitFor(1, TimeUnit.SECONDS);
-            System.out.println("...Android AVD stopped");
+            System.out.println("...Android emulator stopped");
         } catch (Exception e) {
             e.printStackTrace();
         }

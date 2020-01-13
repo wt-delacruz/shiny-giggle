@@ -1,6 +1,6 @@
-package org.fis.test.service;
+package org.fis.framework.service;
 
-import org.fis.test.util.ConfigReader;
+import org.fis.framework.util.ConfigReader;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package org.fis.test.util;
+package org.fis.framework.util;
 
 import org.yaml.snakeyaml.Yaml;
 
