@@ -8,7 +8,7 @@ import org.fis.framework.service.DriverSettings;
 import org.fis.framework.service.MobileSettings;
 import org.fis.framework.service.AppiumServer;
 
-public class BaseTest {
+public abstract class BaseTest {
     public AppiumDriver<MobileElement> driver;
 
     public enum Settings {

@@ -2,10 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="My Test Suite">
-    <test name="Android-Basic-Interactions-Test">
-        <parameter name="deviceDescriptorFileName" value="29-0-pixel_3xl" />
+    <test name="Android-Basic-Interactions-Test-sendkeys1">
+        <parameter name="deviceDescriptorFileName" value="29-0-pixel_3xl"/>
         <classes>
-            <class name="org.fis.test.AndroidBasicInteractionsTest"/>
+            <class name="org.fis.test.AndroidBasicInteractionsTest1"/>
+            <class name="org.fis.test.AndroidBasicInteractionsTest2"/>
+            <class name="org.fis.test.AndroidBasicInteractionsTest3"/>
         </classes>
     </test>
 </suite>

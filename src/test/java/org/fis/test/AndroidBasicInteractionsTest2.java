@@ -12,13 +12,13 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class AndroidBasicInteractionsTest extends BaseTest {
+public class AndroidBasicInteractionsTest2 extends BaseTest {
 
     private final String SEARCH_ACTIVITY = ".app.SearchInvoke";
     private final String PACKAGE = "io.appium.android.apis";
 
     @Test
-    public void testSendKeys(ITestContext context) {
+    public void testSendKeys2(ITestContext context) {
         AndroidDriver<MobileElement> mobile = ((AndroidDriver<MobileElement>) (this.driver));
 
         mobile.startActivity(new Activity(PACKAGE, SEARCH_ACTIVITY));
