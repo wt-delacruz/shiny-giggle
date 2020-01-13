@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class AndroidBasicInteractionsTest3 extends BaseTest {
+public class AndroidBasicInteractionsTest3 extends MyFeatureTeamBaseTest {
 
     private final String SEARCH_ACTIVITY = ".app.SearchInvoke";
     private final String PACKAGE = "io.appium.android.apis";

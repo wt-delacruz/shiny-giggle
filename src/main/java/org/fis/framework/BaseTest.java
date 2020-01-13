@@ -17,7 +17,8 @@ public abstract class BaseTest {
     }
 
     @BeforeSuite
-    public void _startAppiumServer(ITestContext context) {
+    @Parameters({"deviceDescriptorFileName"})
+    public void _startAppiumServer(ITestContext context, String deviceDescriptorFileName) {
         AppiumServer server = new AppiumServer();
         server.start();
         context.setAttribute(Settings.APPIUM_SERVER.toString(), server);
@@ -46,7 +47,7 @@ public abstract class BaseTest {
     }
 
     @AfterClass
-    public void _quitDriverInstance(ITestContext context) {
+    public void _resetDriver(ITestContext context) {
         this.driver.quit();
     }
 }

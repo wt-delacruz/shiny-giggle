@@ -10,9 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AndroidBasicInteractionsTest1 extends BaseTest {
+public class AndroidBasicInteractionsTest1 extends MyFeatureTeamBaseTest {
 
     private final String SEARCH_ACTIVITY = ".app.SearchInvoke";
     private final String PACKAGE = "io.appium.android.apis";
@@ -20,7 +21,7 @@ public class AndroidBasicInteractionsTest1 extends BaseTest {
     @Test
     public void testSendKeys1(ITestContext context) {
         AndroidDriver<MobileElement> mobile = ((AndroidDriver<MobileElement>) (this.driver));
-
+        
         mobile.startActivity(new Activity(PACKAGE, SEARCH_ACTIVITY));
         AndroidElement searchBoxEl = (AndroidElement) driver.findElementById("txt_query_prefill");
         searchBoxEl.sendKeys("Hello world!");
