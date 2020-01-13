@@ -1,8 +1,11 @@
 name: "My Test Suite"
 tests:
   - name: "Android-Basic-Interactions-Test"
-    parameters: {
+    parameters:
+    {
       deviceDescriptorFileName: "29-0-pixel_3xl"
     }
     classes:
-      - "org.fis.test.AndroidBasicInteractionsTest"
+      - "org.fis.test.AndroidBasicInteractionsTest1"
+      - "org.fis.test.AndroidBasicInteractionsTest2"
+      - "org.fis.test.AndroidBasicInteractionsTest3"
