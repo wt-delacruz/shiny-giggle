@@ -1,5 +1,7 @@
 package org.fis.framework.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileInputStream;
@@ -7,6 +9,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 
 public class ConfigReader {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ConfigReader.class);
 
     /**
      * Looks for a YAML file inside the "src/main/config" directory with the name specified in the
@@ -24,8 +27,8 @@ public class ConfigReader {
             InputStream inputStream = new FileInputStream(configFileCanonicalPath);
             return new Yaml().load(inputStream);
         } catch (Exception e) {
-            System.out.println("Cause: " + e.getCause());
-            System.out.println("Message: " + e.getMessage());
+            LOGGER.error("Cause: " + e.getCause());
+            LOGGER.error("Message: " + e.getMessage());
             e.printStackTrace();
             return new HashMap<>();
         }
