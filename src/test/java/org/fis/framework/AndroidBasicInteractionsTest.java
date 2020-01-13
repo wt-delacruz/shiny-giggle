@@ -1,7 +1,6 @@
 package org.fis.framework;
 
 import io.appium.java_client.MobileElement;
-import org.testng.Assert;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -10,13 +9,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
-public class AndroidBasicInteractions3 extends BaseTest {
+public class AndroidBasicInteractionsTest extends MyFeatureTeamBaseTest {
 
     private final String SEARCH_ACTIVITY = ".app.SearchInvoke";
     private final String PACKAGE = "io.appium.android.apis";
 
-    @Test()
+    @Test
     public void testSendKeys(ITestContext context) {
         AndroidDriver<MobileElement> mobile = ((AndroidDriver<MobileElement>) (this.driver));
 
