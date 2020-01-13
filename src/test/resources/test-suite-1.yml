@@ -5,4 +5,4 @@ tests:
       deviceDescriptorFileName: "29-0-pixel_3xl"
     }
     classes:
-      - "org.fis.framework.AndroidBasicInteractionsTest"
+      - "org.fis.test.AndroidBasicInteractionsTest"

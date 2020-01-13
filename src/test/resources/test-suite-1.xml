@@ -5,7 +5,7 @@
     <test name="Android-Basic-Interactions-Test">
         <parameter name="deviceDescriptorFileName" value="29-0-pixel_3xl" />
         <classes>
-            <class name="org.fis.framework.AndroidBasicInteractionsTest"/>
+            <class name="org.fis.test.AndroidBasicInteractionsTest"/>
         </classes>
     </test>
 </suite>
