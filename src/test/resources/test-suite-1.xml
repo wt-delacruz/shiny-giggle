@@ -5,13 +5,14 @@
     <test name="Send keys test on Pixel 3 XL">
         <parameter name="deviceDescriptorFileName" value="Pixel_3_XL_API_29"/>
         <classes>
-            <class name="org.fis.test.AndroidBasicInteractionsTest1"/>
+            <class name="org.fis.test.sandbox.AndroidBasicInteractionsTest1"/>
+            <class name="org.fis.test.sandbox.AndroidBasicInteractionsTest3"/>
         </classes>
     </test>
     <test name="Send keys test on Pixel 3a XL">
         <parameter name="deviceDescriptorFileName" value="Pixel_3A_XL_API_29"/>
         <classes>
-            <class name="org.fis.test.AndroidBasicInteractionsTest1"/>
+            <class name="org.fis.test.sandbox.AndroidBasicInteractionsTest2"/>
         </classes>
     </test>
 </suite>

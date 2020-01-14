@@ -1,10 +1,10 @@
-package org.fis.test;
+package org.fis.test.sandbox;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import org.fis.framework.BaseTest;
+import org.fis.test.mma.MMABaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class AndroidBasicInteractionsTest3 extends MyFeatureTeamBaseTest {
+public class AndroidBasicInteractionsTest3 extends MMABaseTest {
 
     private final String SEARCH_ACTIVITY = ".app.SearchInvoke";
     private final String PACKAGE = "io.appium.android.apis";

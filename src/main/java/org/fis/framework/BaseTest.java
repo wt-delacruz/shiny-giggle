@@ -28,12 +28,12 @@ public abstract class BaseTest {
     public void _setMobileDeviceSettings(ITestContext context, String deviceDescriptorFileName) {
         MobileSettings mobileSettings = new MobileSettings(deviceDescriptorFileName);
         mobileSettings.setCapabilities();
-        context.getSuite().setAttribute(Settings.MOBILE_SETTINGS.toString(), mobileSettings);
+        context.setAttribute(Settings.MOBILE_SETTINGS.toString(), mobileSettings);
     }
 
     @BeforeClass
     public void _setUpDriver(ITestContext context) {
-        MobileSettings mobileSettings = ((MobileSettings) (context.getSuite().getAttribute(Settings.MOBILE_SETTINGS.toString())));
+        MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute(Settings.MOBILE_SETTINGS.toString())));
         AppiumServer appiumServer = ((AppiumServer) (context.getSuite().getAttribute(Settings.APPIUM_SERVER.toString())));
         this.driver = DriverManager.set(
                 appiumServer.getUrl(),
@@ -41,7 +41,7 @@ public abstract class BaseTest {
     }
 
     @AfterSuite
-    public void _tearDown(ITestContext context) {
+    public void _stopAppiumServer(ITestContext context) {
         (((AppiumServer) (context.getSuite().getAttribute(Settings.APPIUM_SERVER.toString())))).stop();
     }
 
