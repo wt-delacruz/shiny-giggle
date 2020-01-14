@@ -1,2 +1,18 @@
 # shiny-giggle
-A pseudo framework that helps to write, execute and report automated tests for mobile platforms using Appium as the automation driver
+This is a sandbox in attempt to evaluate different solutions for a mobile test automation framework.
+The automation driver is Appium (appium.io).
+
+# Getting Started:
+
+Make sure you've set the following environment variables in your ~/.bash_profile file:
+- `NODE_PATH`: Path to where your node executable is stored. Suggestion: use NVM. 
+```shell script
+export NODE_PATH="/$HOME/.nvm/versions/node/v12.14.0/bin/node"
+```
+- `APPIUM_SERVER_PATH`: Path to where your Appium NPM package is stored. Suggestion: use NVM.
+```shell script
+export APPIUM_SERVER_PATH="/$HOME/.nvm/versions/node/v12.14.0/bin/appium"
+```
+# Execution:
+Test are organized in suites so just execute the `test-suite-1.xml` file
+
