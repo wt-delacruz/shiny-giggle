@@ -15,7 +15,7 @@ export APPIUM_SERVER_PATH="/$HOME/.nvm/versions/node/v12.14.0/bin/appium"
 ```
 This is so we can start an Appium server instance for you. Any available port will be used.
 
-Suggestion: Use [NVM](https://github.com/nvm-sh/nvm) to manage your NPM packages.
+Suggestion: Use [NVM](https://github.com/nvm-sh/nvm) to manage your NodeJS versions.
 
 # Execution:
 Test are organized in suites so just execute the `test-suite-1.xml` file
