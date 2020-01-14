@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.testng.annotations.*;
 import org.testng.ITestContext;
-import org.fis.framework.service.DriverSettings;
+import org.fis.framework.service.DriverManager;
 import org.fis.framework.service.MobileSettings;
 import org.fis.framework.service.AppiumServer;
 
@@ -36,7 +36,7 @@ public abstract class BaseTest {
     public void _setUpDriver(ITestContext context) {
         MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute(Settings.MOBILE_SETTINGS.toString())));
         AppiumServer appiumServer = ((AppiumServer) (context.getAttribute(Settings.APPIUM_SERVER.toString())));
-        this.driver = DriverSettings.set(
+        this.driver = DriverManager.set(
                 appiumServer.getUrl(),
                 mobileSettings.getCapabilities());
     }
