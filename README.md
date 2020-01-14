@@ -17,6 +17,10 @@ This is so we can start an Appium server instance for you. Any available port wi
 
 Suggestion: Use [NVM](https://github.com/nvm-sh/nvm) to manage your NodeJS versions.
 
+Additionally make sure you have the following AVDs installed:
+- Pixel 3a XL, 6.0", 1080x2160, 400dpi, Android 10.0 (Google APIs) - Release Name: Q, Portrait startup orientation
+- Pixel 3a XL, 6.0", 1400x2160, 560dpi, Android 10.0 (Google APIs) - Release Name: Q, Portrait startup orientation
+
 # Execution:
 Test are organized in suites so just execute the `test-suite-1.xml` file
 
