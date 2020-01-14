@@ -17,11 +17,10 @@ public abstract class BaseTest {
     }
 
     @BeforeSuite
-    @Parameters({"deviceDescriptorFileName"})
-    public void _startAppiumServer(ITestContext context, String deviceDescriptorFileName) {
+    public void _startAppiumServer(ITestContext context) {
         AppiumServer server = new AppiumServer();
         server.start();
-        context.setAttribute(Settings.APPIUM_SERVER.toString(), server);
+        context.getSuite().setAttribute(Settings.APPIUM_SERVER.toString(), server);
     }
 
     @BeforeTest
@@ -29,25 +28,25 @@ public abstract class BaseTest {
     public void _setMobileDeviceSettings(ITestContext context, String deviceDescriptorFileName) {
         MobileSettings mobileSettings = new MobileSettings(deviceDescriptorFileName);
         mobileSettings.setCapabilities();
-        context.setAttribute(Settings.MOBILE_SETTINGS.toString(), mobileSettings);
+        context.getSuite().setAttribute(Settings.MOBILE_SETTINGS.toString(), mobileSettings);
     }
 
     @BeforeClass
     public void _setUpDriver(ITestContext context) {
-        MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute(Settings.MOBILE_SETTINGS.toString())));
-        AppiumServer appiumServer = ((AppiumServer) (context.getAttribute(Settings.APPIUM_SERVER.toString())));
+        MobileSettings mobileSettings = ((MobileSettings) (context.getSuite().getAttribute(Settings.MOBILE_SETTINGS.toString())));
+        AppiumServer appiumServer = ((AppiumServer) (context.getSuite().getAttribute(Settings.APPIUM_SERVER.toString())));
         this.driver = DriverManager.set(
                 appiumServer.getUrl(),
                 mobileSettings.getCapabilities());
     }
 
     @AfterSuite
-    public void _stopAppiumServer(ITestContext context) {
-        (((AppiumServer) (context.getAttribute(Settings.APPIUM_SERVER.toString())))).stop();
+    public void _tearDown(ITestContext context) {
+        (((AppiumServer) (context.getSuite().getAttribute(Settings.APPIUM_SERVER.toString())))).stop();
     }
 
     @AfterClass
-    public void _resetDriver(ITestContext context) {
+    public void _quitDriver(ITestContext context) {
         this.driver.quit();
     }
 }

@@ -2,12 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="My Test Suite">
-    <parameter name="deviceDescriptorFileName" value="29-0-pixel_3xl"/>
-    <test name="Android-Basic-Interactions-Test-sendkeys1">
+    <test name="Send keys test on Pixel 3 XL">
+        <parameter name="deviceDescriptorFileName" value="Pixel_3_XL_API_29"/>
         <classes>
             <class name="org.fis.test.AndroidBasicInteractionsTest1"/>
-            <class name="org.fis.test.AndroidBasicInteractionsTest2"/>
-            <class name="org.fis.test.AndroidBasicInteractionsTest3"/>
+        </classes>
+    </test>
+    <test name="Send keys test on Pixel 3a XL">
+        <parameter name="deviceDescriptorFileName" value="Pixel_3A_XL_API_29"/>
+        <classes>
+            <class name="org.fis.test.AndroidBasicInteractionsTest1"/>
         </classes>
     </test>
 </suite>

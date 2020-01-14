@@ -1,0 +1,12 @@
+deviceName: "Pixel_3A_XL_API_29"
+avd: "Pixel_3A_XL_API_29"
+udid: "ZY223VD4Z3"
+platformName: "Android"
+platformVersion: "10.0"
+appWaitDuration: 3000
+newCommandTimeout: 6000
+#appPackage: "com.mfoundry.enterprise.mbanking.push"
+#appActivity: "com.fismobile.cpas.dev.ui.DevStartupActivity"
+autoLaunch: True
+automationName: "uiautomator2"
+app: "/Users/wdelacruz/projects/shiny-giggle/src/test/resources/apps/ApiDemos-debug.apk"
