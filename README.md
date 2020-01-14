@@ -1,5 +1,5 @@
 # shiny-giggle
-This is a sandbox in attempt to evaluate different solutions for a mobile test automation framework.
+This sandbox attempts to evaluate different solutions for a mobile test automation framework.
 The automation driver is Appium (appium.io).
 
 # Getting Started:
