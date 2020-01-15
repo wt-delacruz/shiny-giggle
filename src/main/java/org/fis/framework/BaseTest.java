@@ -1,18 +1,12 @@
 package org.fis.framework;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import org.fis.framework.factory.DriverManager;
-import org.fis.framework.factory.DriverManagerFactory;
-import org.fis.framework.factory.DriverType;
 import org.testng.annotations.*;
 import org.testng.ITestContext;
-import org.fis.framework.service.DriverSettings;
+import org.fis.framework.service.DriverManager;
 import org.fis.framework.service.MobileSettings;
 import org.fis.framework.service.AppiumServer;
 
 public class BaseTest {
-    public AppiumDriver<MobileElement> driver;
     public DriverManager driverManager;
 
     public enum Settings {
@@ -39,14 +33,7 @@ public class BaseTest {
     public void _setUpDriver(ITestContext context) {
         MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute(Settings.MOBILE_SETTINGS.toString())));
         AppiumServer appiumServer = ((AppiumServer) (context.getSuite().getAttribute(Settings.APPIUM_SERVER.toString())));
-        driverManager = DriverManagerFactory.getManager(
-                DriverType.ANDROID,
-                mobileSettings.getCapabilities(),
-                appiumServer.getUrl());
-
-//        this.driver = DriverSettings.set(
-//                appiumServer.getUrl(),
-//                mobileSettings.getCapabilities());
+        this.driverManager = new DriverManager(appiumServer.getUrl(), mobileSettings.getCapabilities());
 
     }
 
@@ -57,6 +44,6 @@ public class BaseTest {
 
     @AfterClass
     public void _quitDriver(ITestContext context) {
-        this.driver.quit();
+        this.driverManager.driver.quit();
     }
 }
