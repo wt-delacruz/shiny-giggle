@@ -34,7 +34,6 @@ public class BaseTest {
         MobileSettings mobileSettings = ((MobileSettings) (context.getAttribute(Settings.MOBILE_SETTINGS.toString())));
         AppiumServer appiumServer = ((AppiumServer) (context.getSuite().getAttribute(Settings.APPIUM_SERVER.toString())));
         this.driverManager = new DriverManager(appiumServer.getUrl(), mobileSettings.getCapabilities());
-
     }
 
     @AfterSuite

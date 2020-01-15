@@ -22,7 +22,7 @@ public class DriverManager {
         this.set();
     }
 
-    public void set() {
+    private void set() {
         switch (this.platformName) {
             case "iOS":
                 this.driver = new IOSDriver<>(serverURL, this.capabilities);
