@@ -10,18 +10,27 @@ import java.net.URL;
 
 public class DriverManager {
 
-    public static AppiumDriver<MobileElement> set(URL serverURL, DesiredCapabilities capabilities) {
-        AppiumDriver<MobileElement> driver;
-        String platformName = capabilities.getPlatform().name();
-        switch (platformName) {
+    public AppiumDriver<MobileElement> driver;
+    private URL serverURL;
+    private DesiredCapabilities capabilities;
+    public String platformName;
+
+    public DriverManager(URL serverURL, DesiredCapabilities capabilities) {
+        this.capabilities = capabilities;
+        this.serverURL = serverURL;
+        this.platformName = this.capabilities.getPlatform().name();
+        this.set();
+    }
+
+    public void set() {
+        switch (this.platformName) {
             case "iOS":
-                driver = new IOSDriver<>(serverURL, capabilities);
+                this.driver = new IOSDriver<>(serverURL, this.capabilities);
                 break;
             case "Android":
             default:
-                driver = new AndroidDriver<>(serverURL, capabilities);
+                this.driver = new AndroidDriver<>(serverURL, this.capabilities);
                 break;
         }
-        return driver;
     }
 }
