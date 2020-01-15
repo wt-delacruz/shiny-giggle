@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
-public class DriverManager {
+public class DriverSettings {
 
     public static AppiumDriver<MobileElement> set(URL serverURL, DesiredCapabilities capabilities) {
         AppiumDriver<MobileElement> driver;
