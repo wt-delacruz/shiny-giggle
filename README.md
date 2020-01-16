@@ -27,5 +27,5 @@ Pixel_3A_XL_API_29 | Pixel 3a XL | 1080x2160, 400dpi | Android 10.0 | Android Q 
 Lastly, make sure `appium-doctor` checks are green for what you need.
 
 # Execution:
-Tests are organized in suites so just execute the `test-suite-1.xml` file
+Tests are organized in suites so just execute the `resources/test-suite-1.xml` file
 
