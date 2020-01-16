@@ -24,6 +24,8 @@ Device Name | Model | Resolution | Google APIs | OS Release Name |
 Pixel_3_XL_API_29 | Pixel 3 XL | 1400x2160, 560dpi | Android 10.0 | Android Q |
 Pixel_3A_XL_API_29 | Pixel 3a XL | 1080x2160, 400dpi | Android 10.0 | Android Q |
 
+Lastly, make sure `appium-doctor` checks are green for what you need.
+
 # Execution:
 Tests are organized in suites so just execute the `test-suite-1.xml` file
 
