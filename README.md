@@ -1,6 +1,6 @@
 # shiny-giggle
-This sandbox attempts to evaluate different solutions for a mobile test automation framework.
-The automation driver is Appium (appium.io) and the test runner is TestNG.
+This sandbox attempts to evaluate different solutions for a potential mobile test automation framework.
+The automation driver is Appium (https://appium.io) and the test runner is TestNG (https://testng.org/doc/documentation-main.html).
 
 # Getting Started:
 
@@ -27,5 +27,5 @@ Pixel_3A_XL_API_29 | Pixel 3a XL | 1080x2160, 400dpi | Android 10.0 | Android Q 
 Lastly, make sure `appium-doctor` checks are green for what you need.
 
 # Execution:
-Tests are organized in suites so just execute the `resources/test-suite-1.xml` file
+Test are executed by running `mvn install` or, since they are organized by suites, just execute the `resources/default.xml` file from your preferred IDE.
 
