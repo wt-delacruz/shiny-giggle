@@ -3,7 +3,9 @@
 
 <suite name="My Default Test Suite">
     <test name="Default Test">
+        <parameter name="deviceDescriptorFileName" value="Pixel_3_XL_API_29"/>
         <classes>
+            <class name="org.fis.test.sandbox.AndroidBasicInteractionsTest1"/>
         </classes>
     </test>
 
