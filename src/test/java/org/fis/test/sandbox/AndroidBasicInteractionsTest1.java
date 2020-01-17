@@ -19,14 +19,14 @@ public class AndroidBasicInteractionsTest1 extends MMABaseTest {
 
     @Test
     public void testSendKeys1(ITestContext context) {
-        AndroidDriver<MobileElement> mobile = ((AndroidDriver<MobileElement>) (this.driverManager.driver));
+        AndroidDriver<MobileElement> mobile = ((AndroidDriver<MobileElement>) (this.driverManager.getDriver()));
         
         mobile.startActivity(new Activity(PACKAGE, SEARCH_ACTIVITY));
-        AndroidElement searchBoxEl = (AndroidElement) this.driverManager.driver.findElementById("txt_query_prefill");
+        AndroidElement searchBoxEl = (AndroidElement) this.driverManager.getDriver().findElementById("txt_query_prefill");
         searchBoxEl.sendKeys("Hello world!");
-        AndroidElement onSearchRequestedBtn = (AndroidElement) this.driverManager.driver.findElementById("btn_start_search");
+        AndroidElement onSearchRequestedBtn = (AndroidElement) this.driverManager.getDriver().findElementById("btn_start_search");
         onSearchRequestedBtn.click();
-        AndroidElement searchText = (AndroidElement) new WebDriverWait(this.driverManager.driver, 30)
+        AndroidElement searchText = (AndroidElement) new WebDriverWait(this.driverManager.getDriver(), 30)
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("android:id/search_src_text")));
         String searchTextValue = searchText.getText();
         Assert.assertEquals(searchTextValue, "Hello world!");
