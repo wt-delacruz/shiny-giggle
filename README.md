@@ -27,5 +27,5 @@ Pixel_3A_XL_API_29 | Pixel 3a XL | 1080x2160, 400dpi | Android 10.0 | Android Q 
 Lastly, make sure `appium-doctor` checks are green for what you need.
 
 # Execution:
-Test are executed by running `mvn install` and since they are organized by suites, just execute the `resources/default.xml` file from you preferred IDE.
+Test are executed by running `mvn install` or, since they are organized by suites, just execute the `resources/default.xml` file from you preferred IDE.
 
