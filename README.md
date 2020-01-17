@@ -1,6 +1,6 @@
 # shiny-giggle
 This sandbox attempts to evaluate different solutions for a potential mobile test automation framework.
-The automation driver is Appium (appium.io) and the test runner is TestNG.
+The automation driver is Appium (appium.io) and the test runner is TestNG (https://testng.org/doc/documentation-main.html).
 
 # Getting Started:
 
