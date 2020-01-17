@@ -11,7 +11,7 @@ public class BasePage {
 
     public BasePage(DriverManager driverManager) {
         this.driverManager = driverManager;
-        this.driver = this.driverManager.driver;
+        this.driver = this.driverManager.getDriver();
         this.platformName = this.driverManager.platformName;
     }
 
