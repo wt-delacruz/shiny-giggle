@@ -1,10 +1,10 @@
-package org.fis.framework;
+package org.bsf.framework;
 
 import org.testng.annotations.*;
 import org.testng.ITestContext;
-import org.fis.framework.service.DriverManager;
-import org.fis.framework.service.MobileSettings;
-import org.fis.framework.service.AppiumServer;
+import org.bsf.framework.service.DriverManager;
+import org.bsf.framework.service.MobileSettings;
+import org.bsf.framework.service.AppiumServer;
 
 public class BaseTest {
     public DriverManager driverManager;

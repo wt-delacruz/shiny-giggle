@@ -1,12 +1,18 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="My Default Test Suite">
-    <test name="Default Test">
+<suite name="My Test Suite">
+    <test name="Send keys test on Pixel 3 XL">
         <parameter name="deviceDescriptorFileName" value="Pixel_3_XL_API_29"/>
         <classes>
-            <class name="org.fis.test.sandbox.AndroidBasicInteractionsTest1"/>
+            <class name="org.bsf.test.sandbox.AndroidBasicInteractionsTest1"/>
+            <class name="org.bsf.test.sandbox.AndroidBasicInteractionsTest3"/>
         </classes>
     </test>
-
+    <test name="Send keys test on Pixel 3a XL">
+        <parameter name="deviceDescriptorFileName" value="Pixel_3A_XL_API_29"/>
+        <classes>
+            <class name="org.bsf.test.sandbox.AndroidBasicInteractionsTest2"/>
+        </classes>
+    </test>
 </suite>

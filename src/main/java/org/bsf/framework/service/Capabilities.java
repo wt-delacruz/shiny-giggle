@@ -1,6 +1,6 @@
-package org.fis.framework.service;
+package org.bsf.framework.service;
 
-import org.fis.framework.util.ConfigReader;
+import org.bsf.framework.util.ConfigReader;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;

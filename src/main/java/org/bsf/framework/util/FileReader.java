@@ -1,4 +1,4 @@
-package org.fis.framework.util;
+package org.bsf.framework.util;
 
 import java.io.File;
 import java.io.IOException;

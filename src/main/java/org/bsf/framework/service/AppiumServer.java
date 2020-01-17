@@ -1,8 +1,8 @@
-package org.fis.framework.service;
+package org.bsf.framework.service;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.fis.framework.util.Utilities;
+import org.bsf.framework.util.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package org.fis.framework.service;
+package org.bsf.framework.service;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 

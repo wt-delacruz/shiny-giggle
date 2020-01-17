@@ -1,8 +1,8 @@
-package org.fis.framework.pageObject;
+package org.bsf.framework.pageObject;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.fis.framework.service.DriverManager;
+import org.bsf.framework.service.DriverManager;
 
 public class BasePage {
     private final DriverManager driverManager;

@@ -1,4 +1,4 @@
-package org.fis.framework.util;
+package org.bsf.framework.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
