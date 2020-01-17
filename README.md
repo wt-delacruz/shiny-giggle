@@ -17,7 +17,7 @@ This is so we can start an Appium server instance for you. Any available port wi
 
 Suggestion: Use [NVM](https://github.com/nvm-sh/nvm) to manage your NodeJS versions.
 
-Additionally make sure you have the following AVDs installed:
+Additionally, make sure you have the following AVDs installed:
 
 Device Name | Model | Resolution | Google APIs | OS Release Name |
 ----------- | ----- | ---------- | ----------- | --------------- |
@@ -27,5 +27,5 @@ Pixel_3A_XL_API_29 | Pixel 3a XL | 1080x2160, 400dpi | Android 10.0 | Android Q 
 Lastly, make sure `appium-doctor` checks are green for what you need.
 
 # Execution:
-Test are executed by running `mvn install` or, since they are organized by suites, just execute the `resources/default.xml` file from your preferred IDE.
+Tests are executed by running `mvn install` or, since they are organized by suites, just execute the `resources/default.xml` file from your preferred IDE.
 
